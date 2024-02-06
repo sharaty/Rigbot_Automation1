@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="2" parallel="classes" name="Failed suite [ParallelTestingSuite]" guice-stage="DEVELOPMENT">
+  <test thread-count="2" parallel="classes" name="ParallelTesing(failed)">
+    <classes>
+      <class name="com.Rigbot_Test_Scripts.Loads.Filters.Default_Filters">
+        <methods>
+          <include name="openbrowser"/>
+          <include name="report"/>
+          <include name="test_filters"/>
+          <include name="reclose"/>
+          <include name="logout"/>
+          <include name="login"/>
+          <include name="closeapp"/>
+        </methods>
+      </class> <!-- com.Rigbot_Test_Scripts.Loads.Filters.Default_Filters -->
+      <class name="com.Rigbot_Test_Scripts.Loads.Quick_Setup.scripto1">
+        <methods>
+          <include name="openbrowser"/>
+          <include name="report"/>
+          <include name="test"/>
+          <include name="reclose"/>
+          <include name="logout"/>
+          <include name="login"/>
+          <include name="closeapp"/>
+        </methods>
+      </class> <!-- com.Rigbot_Test_Scripts.Loads.Quick_Setup.scripto1 -->
+      <class name="com.Rigbot_Test_Scripts.Invoice.Create_Invoice">
+        <methods>
+          <include name="test_invoice"/>
+          <include name="openbrowser"/>
+          <include name="report"/>
+          <include name="reclose"/>
+          <include name="logout"/>
+          <include name="login"/>
+          <include name="closeapp"/>
+        </methods>
+      </class> <!-- com.Rigbot_Test_Scripts.Invoice.Create_Invoice -->
+    </classes>
+  </test> <!-- ParallelTesing(failed) -->
+</suite> <!-- Failed suite [ParallelTestingSuite] -->
