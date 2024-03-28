@@ -55,7 +55,7 @@ public class BaseClass
 		load.un_textfield().sendKeys("automation");
 		//test.log(Status.INFO,("the textfield is working"));
 		Thread.sleep(2000);
-		load.pwd_textfiled().sendKeys("1234");
+		load.pwd_textfiled().sendKeys("112233");
 		Thread.sleep(2000);
 		load.login_btn().click();
 		test.log(Status.PASS,("login successfully"));
