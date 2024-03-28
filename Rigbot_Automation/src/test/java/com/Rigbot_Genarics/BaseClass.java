@@ -37,9 +37,9 @@ public class BaseClass
 	{
 		//	    WebDriverManager.chromedriver().setup();
 		System.setProperty("webdriver.chrome.driver","./softwares/chromedriver1.exe");
-		ChromeOptions options=new ChromeOptions();
-		options.addArguments("--remote-allow-origins=*");
-		driver=new ChromeDriver(options);
+		//ChromeOptions options=new ChromeOptions();
+		//options.addArguments("--remote-allow-origins=*");
+		driver=new ChromeDriver();
 		driver.manage().window().maximize();
 		test.log(Status.PASS,"browser is launched");
 		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
@@ -55,7 +55,7 @@ public class BaseClass
 		load.un_textfield().sendKeys("automation");
 		//test.log(Status.INFO,("the textfield is working"));
 		Thread.sleep(2000);
-		load.pwd_textfiled().sendKeys("123");
+		load.pwd_textfiled().sendKeys("1234");
 		Thread.sleep(2000);
 		load.login_btn().click();
 		test.log(Status.PASS,("login successfully"));

@@ -1,5 +1,7 @@
 package com.Rigbot_Test_Scripts.Loads.Quick_Setup;
 
+import static org.testng.Assert.fail;
+
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
@@ -16,6 +18,7 @@ import org.testng.ITestListener;
 import org.testng.ITestResult;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 import com.Rigbot_Genarics.BaseClass;
 import com.Rigbot_Genarics.Extent_Report_Screen_Shot;
@@ -34,6 +37,7 @@ public class Quick_Setup extends BaseClass
 	@Test()
 	public  void test_Quick_Setup() throws InterruptedException, AWTException
 	{
+		
 		pom_create_load PomQuickSetup = new pom_create_load(driver);
 		Thread.sleep(3000);
 
@@ -106,6 +110,7 @@ public class Quick_Setup extends BaseClass
 			test.log(Status.FAIL,"the customer name is not entered");
 		}
 
+		
 
 		Thread.sleep(5000);
 		PomQuickSetup.selectCustomer().click();
@@ -165,6 +170,8 @@ public class Quick_Setup extends BaseClass
 		//Thread.sleep(3000);
 		PomQuickSetup.selectTruckname().click();
 		Thread.sleep(3000);
+		javascript_class.scroll_down_using_add(PomQuickSetup.Quick_setup());
+		Thread.sleep(3000);
 		WebElement saveButton = PomQuickSetup.saveButton();
 		if(saveButton.isEnabled())
 		{
@@ -177,14 +184,17 @@ public class Quick_Setup extends BaseClass
 
 		}
 		Thread.sleep(3000);
+		//javascript_class.scroll_down_using_loc(0, -1000);
 		
-		
-		if (driver.getPageSource().contains("Notes")) 	
+		if (driver.getPageSource().contains("order number is already taken")) 	
 		{
 		test.log(Status.FAIL, "The load is not created Because of order/Load number ,Customer/Broker names and pickup date greater than the Dropoff date Conditions are Failed");
 		
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		Extent_Report_Screen_Shot.getScreenshot();
+		//Assert.fail();
+		//SoftAssert s = new SoftAssert();
+		//s.assertEquals("Notes","Notes");
 		
 		}
 		else
@@ -192,6 +202,7 @@ public class Quick_Setup extends BaseClass
 			test.log(Status.PASS,"the Load is created Successfully");
 		}
 
+		
 	}
 
 

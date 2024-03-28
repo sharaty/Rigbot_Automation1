@@ -3,6 +3,7 @@ package com.Rigbot_Pom_Scripts.Loads.Quick_SetUp;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.internal.WebElementToJsonConverter;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -74,6 +75,9 @@ public class pom_create_load
 	
 	@FindBy(xpath="//button[.='Save']")
 	private WebElement savebtn;
+	
+	@FindBy(xpath = "//span[.=' Quick Setup']")
+	private WebElement Quick_setup_tab;
 
 
 	//initialisation
@@ -189,6 +193,11 @@ public class pom_create_load
 	public WebElement saveButton()
 	{
 		return savebtn;
+	}
+	
+	public WebElement Quick_setup()
+	{
+		return Quick_setup_tab;
 	}
 
 
